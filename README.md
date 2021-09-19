@@ -18,8 +18,8 @@
 
 5. run main.py with
    
-   ```python3 main.py```
-   or
-   ```chmod +x main.py```
+   ```python3 main.py```\
+   or\
+   ```chmod +x main.py```\
    ```./main.py```
 
