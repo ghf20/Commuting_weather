@@ -23,3 +23,22 @@
    ```chmod +x main.py```\
    ```./main.py```
 
+6. register main.py to schedule execution
+
+    Before execute the command below, be sure to change directory to the path 'main.py' is located
+    
+    Modify the time and date fields described as * * * * *
+    
+　  ```echo "* * * * * ${USER}" $(which python3) $(pwd)\/main.py | tee -a /etc/crontab```\
+    
+    ```systemctl restart cron.service```\
+  
+  　The time and date fields:
+   
+       ex1)run main.py at 09:00 AM everyday
+       ```echo "0 9 * * * ${USER}" $(which python3) $(pwd)\/main.py | tee -a /etc/crontab```\
+
+       ex2)run main.py at 02:15 PM on the first of every month 
+       ```echo "15 14 1 * * ${USER}" $(which python3) $(pwd)\/main.py | tee -a /etc/crontab```\
+
+       Further detail refer https://man7.org/linux/man-pages/man5/crontab.5.html
